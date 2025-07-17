@@ -2,7 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import connect from './connect/connect.js'
 import router from './routes/routes.js'
-
+import { configDotenv } from 'dotenv'
+configDotenv()
 const app = express()
 
 // Configure CORS for production
