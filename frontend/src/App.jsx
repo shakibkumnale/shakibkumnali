@@ -2,8 +2,8 @@ import { useState , useEffect } from 'react'
 import { CiStar } from "react-icons/ci";
 import { FaTasks } from "react-icons/fa";
 import axios from 'axios'
-
 function App() {
+  const url = import.meta.env.VITE_API_URL || "https://metricoid-technology-b.vercel.app/api"
   const [data, setData] = useState([])
   useEffect(() => {
    
@@ -14,7 +14,7 @@ function App() {
   }, [data])
   const fetch=async()=>{
      try {
-            const res= await axios.get('http://Metricoid- Technology-b.vercel.app/api')
+            const res= await axios.get(url)
             console.log(res.data);
             setData(res.data.data)
             
